@@ -35,6 +35,7 @@ typedef struct PACKED {
 } key_combination_t;
 
 static uint32_t siri_timer_buffer = 0;
+// Vial .7 has been updated to include macOS modifiers
 // static uint8_t  mac_keycode[4]    = {KC_LOPT, KC_ROPT, KC_LCMD, KC_RCMD};
 
 key_combination_t key_comb_list[4] = {
@@ -72,6 +73,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 #endif
 
     switch (keycode) {
+        // Vial .7 has been updated to include macOS modifiers
         // case KC_LOPTN:
         // case KC_ROPTN:
         // case KC_LCMMD:
@@ -82,6 +84,16 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
         //         unregister_code(mac_keycode[keycode - KC_LOPTN]);
         //     }
         //     return false; // Skip all further processing of this key
+        /* START: Attempt at restoring Mission Control & Luanchpad Functionality */
+        case KC_MCTL:
+            /* Mission Control */
+            host_consumer_send(record->event.pressed ? 0x29F : 0);
+            return false; // Skip all further processing of this key
+        case KC_LNPD:
+            /* Launchpad */
+            host_consumer_send(record->event.pressed ? 0x2A0 : 0);
+            return false; // Skip all further processing of this key
+        /* END: Attempt at restoring Mission Control & Luanchpad Functionality */
         case KC_TASK:
         case KC_FILE:
         case KC_SNAP:

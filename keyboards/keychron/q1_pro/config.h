@@ -33,7 +33,9 @@
 #define RGB_DISABLE_WHEN_USB_SUSPENDED
 
 /* Set 0 if debouncing isn't needed */
+// Original debaounce value
 // #define DEBOUNCE 5
+// Disabling debounce due to memory leak referenced in keychron's bluetooth-playground branch 7-27-23
 #define DEBOUNCE 0
 
 /* DIP switch for Mac/win OS switch */
