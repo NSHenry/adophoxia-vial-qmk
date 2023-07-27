@@ -33,7 +33,8 @@
 #define RGB_DISABLE_WHEN_USB_SUSPENDED
 
 /* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
+// #define DEBOUNCE 5
+#define DEBOUNCE 0
 
 /* DIP switch for Mac/win OS switch */
 #define DIP_SWITCH_PINS \
@@ -48,14 +49,14 @@
 #    define USB_POWER_SENSE_PIN B1
 #    define USB_POWER_CONNECTED_LEVEL 0
 
-#    define HOST_DEVICES_COUNT 3
+#    define HOST_DEVICES_COUNT 6
 
 #    if defined(RGB_MATRIX_ENABLE)
 
 #        define LED_DRIVER_SHUTDOWN_PIN C14
 
 #        define HOST_LED_MATRIX_LIST \
-            { 16, 17, 18 }
+            { 16, 17, 18, 19, 20, 21 }
 
 #        define BAT_LEVEL_LED_LIST \
             { 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 }

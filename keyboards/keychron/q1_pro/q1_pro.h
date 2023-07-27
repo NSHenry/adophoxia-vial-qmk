@@ -31,11 +31,7 @@
 
 // clang-format off
 enum {
-    KC_LOPTN = USER_START,
-    KC_ROPTN,
-    KC_LCMMD,
-    KC_RCMMD,
-    KC_MCTL,
+    KC_MCTL = USER_START,
     KC_LNPD,
     KC_TASK,
     KC_FILE,
@@ -46,11 +42,17 @@ enum {
     BT_HST1,
     BT_HST2,
     BT_HST3,
+    BT_HST4,
+    BT_HST5,
+    BT_HST6,
     BAT_LVL,
 #else
     BT_HST1 = KC_TRNS,
     BT_HST2 = KC_TRNS,
     BT_HST3 = KC_TRNS,
+    BT_HST4 = KC_TRNS,
+    BT_HST5 = KC_TRNS,
+    BT_HST6 = KC_TRNS,
     BAT_LVL = KC_TRNS,
 #endif
 	NEW_SAFE_RANGE
